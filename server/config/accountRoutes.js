@@ -30,4 +30,9 @@ module.exports = function(app){
         console.log("***DELETE_ACCOUNT_ROUTE***");
         accounts.destroy(req, res);
     })
+
+    app.get('/app/exporttocsv', function(req, res, next) {
+        console.log("**CSV_ACCOUNT_ROUTE**")
+        accounts.csv(req, res);
+    })
 }

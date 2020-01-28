@@ -16,6 +16,28 @@ module.exports = {
             });
     },
 
+
+    csv: function(req, res) {
+        
+    const account = Account.find({_id: req.params.id})
+        
+        const filename = "${account.lastFour}"+'_'+"transactions";
+        const transactions = account.transactions;
+
+            //NOTE .lean() transforms a mongoose document into a javascript array;
+        transactions.lean().exec({}, function (err, transactionList) {
+            if (err) res.json(err);
+
+            res.setHeader('Content-Type', 'text/csv');
+
+            res.setHeader("Content-Disposition", 'attachment; filename='+filename);
+
+            res.csv(transactionList, true);
+            
+        })
+    },
+
+    
     show: function (req, res) {
         console.log('**CONTROLLER GETONE ***', req.params)
         User.findOne({ _id: req.params.id})
@@ -28,6 +50,7 @@ module.exports = {
                 res.json(err.errors[key].message);
             });
     },
+
 
     create: function (req, res) {
         console.log(req.body);

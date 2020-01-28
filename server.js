@@ -9,7 +9,10 @@ app.set('views', __dirname + '/client/views');
 app.use(express.json());
 // app.use(express.urlencoded({extended: true}));
 
-//NOTE Eroors and Session
+var csv = require('csv-express');
+
+
+//NOTE Errors and Session
 const flash = require('express-flash');
 const session = require('express-session');
 app.use(flash());

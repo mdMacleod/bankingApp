@@ -1,1 +1,22 @@
-<p>savings works!</p>
+<div id="saving" class="account">
+    <h1>Savings Accounts</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col"><a [routerLink]="['/dashboard/savings']">Savings Accounts</a></th>
+                <th scope="col">$27,900.00</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Account Name</td>
+            <td>Available Balance</td>
+        </tr>
+        <tr>
+            <td><a [routerLink]="['/dashboard/savings', savings._id]">Savings -2537</a></td>
+            <td>$27,900.00</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<a [routerLink]="['/dashboard/home']">Back to All Accounts</a>

@@ -1,1 +1,22 @@
-<p>checking works!</p>
+<div id="checking" class="account">
+    <h1>Checking Accounts</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Checking Accounts</th>
+                <th scope="col">$3,782.01</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Account Name</td>
+            <td>Available Balance</td>
+        </tr>
+        <tr>
+            <td><a [routerLink]="['/dashboard/checking/id']">Checking -8349</a></td>
+            <td>$3,782.01</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<a [routerLink]="['/dashboard/home']">Back to All Accounts</a>

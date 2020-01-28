@@ -1,1 +1,26 @@
-<p>credit works!</p>
+<div id="cc" class="account">
+    <h1>Credit Cards</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Credit Cards</th>
+                <th scope="col">  </th>
+                <th scope="col">$15,000.00</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Account Name</td>
+            <td>Available Credit</td>
+            <td>Current Balance</td>
+        </tr>
+        <tr>
+            <td><a [routerLink]="['/dashboard/credit', credit._id]">Credit Card -4207</a></td>
+            <td>$13,387.56</td>
+            <td>$1,612.44</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<a [routerLink]="['/dashboard/home']">Back to All Accounts</a>
+

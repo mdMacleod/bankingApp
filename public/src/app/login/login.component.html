@@ -1,1 +1,76 @@
-<p>login works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>BBC Bank</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">BBC BANK</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                <a class="nav-link" href="#">PERSONAL<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">BUSINESS</a>
+                </li>
+                <li class="nav-item dropdown">
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <a href="/"><img src="assets/images/search.png" alt="search"></a>
+            </form>
+            <span class="navbar-text">
+                <a href="/">REGISTER</a>
+            </span>
+        </div>
+    </nav>
+    <div class="subnav">
+        <ul class="list-inline">
+            <li class="list-inline-item">CHECKING & SAVINGS</li>
+            <li class="list-inline-item">CREDIT CARDS</li>
+            <li class="list-inline-item">LOANS</li>        
+        </ul>
+    </div>
+    <div class="container-fluid" [ngStyle]="{background: 'url(assets/images/sky.jpg)'}">
+        <div class="row">
+            <div class="col-md-8">
+                <h1>Welcome to BBC BANK</h1>
+                <span><h3>The sky is the limit.</h3></span>
+            </div>
+            <div class="col-md-4">
+                <div class="login">
+                    <h2>LOG IN</h2>
+                    <form (submit)="onSubmit()" class="form1">
+                        <div class="form-group">
+                            <label for="newUser.acct_type">Account Type</label>
+                            <select class="form-control" id="newUser.acct_type">
+                            <option>Online Banking</option>
+                            <option>Online Investing</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="newUser">Email</label>
+                            <input type="text" [(ngModel)]="newUser" name="newUser" id="newUser" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="newUser">Password</label>
+                            <input type="password" [(ngModel)]="newUser" name="newUser" id="newUser" class="form-control">
+                        </div>
+                        <button type="submit" [routerLink]="['/dashboard/home']" class="btn btn-light" value="Create Task" id="login_btn">LOGIN</button>
+                    </form>
+                    <span><p>Need an account? Register Here</p></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

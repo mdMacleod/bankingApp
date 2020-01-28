@@ -1,6 +1,10 @@
 console.log('****CONTROLLERS*****');
-
+const User = require('../models/user.js');
 const Account = require('../models/account.js');
+const Checking = require('../models/account.js');
+const Savings = require('../models/account.js');
+const Loan = require('../models/account.js');
+const Credit = require('../models/account.js');
 
 module.exports = {
     index: function (req, res) {
@@ -18,8 +22,8 @@ module.exports = {
 
     show: function (req, res) {
         console.log('**CONTROLLER GETONE ***', req.params)
-        User.findOne({ _id: req.params.id})
-            .then(pet => res.json({pet: pet}))
+        Account.findOne({ _id: req.params.id})
+            .then(account => res.json({account: account}))
             .catch(err => {
                 console.log("We have an error!", err);
                 for (var key in err.errors) {
@@ -29,26 +33,80 @@ module.exports = {
             });
     },
 
-    create: function (req, res) {
-        console.log(req.body);
-        User.find({name: req.body.name})
-        .then( user => {
-            if (user.length > 0) {
-                return Promise.reject ({unique: "That pet already exists!"})
-            }
-            return User.create(req.body)
+    createChecking: function (req, res) {
+        User.findOne({_id: req.params.id})
+        .then(user => {
+            const account = new Checking()
+            account._user = user;
+            return account.save()
         })
+        .then(account => {
+            console.log(account)
+            User.findOne({_id: req.params.id})
+            .then(user => {
+                user.accounts.push(account);
+                user.save();
+            })
+        })
+        .then((newCheckingData) => res.json({message: 'Success', account: newCheckingData}))
+        .catch(err => res.json({ errors: err }))
+    },
 
-            .then(data => { console.log(data); res.json(data) })
-            .catch(err => {
-                console.log("****ERRROR HERE****");
-                console.log(err);
-                for (var key in err.errors) {
-                    req.flash('registration', err.errors[key].message);
-                }
-                console.log("***ERRORS HERE ***", err)
-                res.json({ errors: err });
-            });
+    createSavings: function (req, res) {
+        User.findOne({_id: req.params.id})
+        .then(user => {
+            const account = new Savings()
+            account._user = user;
+            return account.save()
+        })
+        .then(account => {
+            console.log(account)
+            User.findOne({_id: req.params.id})
+            .then(user => {
+                user.accounts.push(account);
+                user.save();
+            })
+        })
+        .then((newSavingsData) => res.json({message: 'Success', account: newSavingsData}))
+        .catch(err => res.json({ errors: err }))
+    },
+
+    createLoan: function (req, res) {
+        User.findOne({_id: req.params.id})
+        .then(user => {
+            const account = new Loan()
+            account._user = user;
+            return account.save()
+        })
+        .then(account => {
+            console.log(account)
+            User.findOne({_id: req.params.id})
+            .then(user => {
+                user.accounts.push(account);
+                user.save();
+            })
+        })
+        .then((newLoanData) => res.json({message: 'Success', account: newLoanData}))
+        .catch(err => res.json({ errors: err }))
+    },
+
+    createCredit: function (req, res) {
+        User.findOne({_id: req.params.id})
+        .then(user => {
+            const account = new Credit()
+            account._user = user;
+            return account.save()
+        })
+        .then(account => {
+            console.log(account)
+            User.findOne({_id: req.params.id})
+            .then(user => {
+                user.accounts.push(account);
+                user.save();
+            })
+        })
+        .then((newCreditData) => res.json({message: 'Success', account: newCreditData}))
+        .catch(err => res.json({ errors: err }))
     },
 
     update: function (req, res) {

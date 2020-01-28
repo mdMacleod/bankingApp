@@ -17,6 +17,7 @@ import { OneCreditComponent } from './dashboard/credit/one-credit/one-credit.com
 import { OneLoanComponent } from './dashboard/loans/one-loan/one-loan.component';
 import { OneSavingsComponent } from './dashboard/savings/one-savings/one-savings.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
+import { HomeComponent } from './dashboard/home/home.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { FileUploadComponent } from './file-upload/file-upload.component';
     OneCreditComponent,
     OneLoanComponent,
     OneSavingsComponent,
-    FileUploadComponent
+    FileUploadComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

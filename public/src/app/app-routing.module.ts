@@ -10,15 +10,16 @@ import { LoansComponent } from './dashboard/loans/loans.component';
 import { OneLoanComponent } from './dashboard/loans/one-loan/one-loan.component';
 import { CreditComponent } from './dashboard/credit/credit.component';
 import { OneCreditComponent } from './dashboard/credit/one-credit/one-credit.component';
+import { HomeComponent } from './dashboard/home/home.component';
 
 const routes: Routes = [
 
   { path: 'login', component: LoginComponent },
 
   { path: 'dashboard', component: DashboardComponent, children: [
-
+    {path: 'home', component: HomeComponent},
     {path: 'checking', component: CheckingComponent, children: [
-      {path: ':id', component: OneCheckingComponent}
+      {path: 'id', component: OneCheckingComponent}
     ]},
 
     { path: 'savings', component: SavingsComponent, children: [

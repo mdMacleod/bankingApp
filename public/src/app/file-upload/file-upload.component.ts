@@ -9,6 +9,7 @@ import { observable } from 'rxjs';
   templateUrl: './file-upload.component.html',
   styleUrls: ['./file-upload.component.css']
 })
+
 export class FileUploadComponent implements OnInit {
 
   constructor(

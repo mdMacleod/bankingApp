@@ -17,20 +17,27 @@ const AccountSchema = new mongoose.Schema({
         
     }, options, { timestamps: true }, { collection: 'accounts', discriminatorKey : '_type'})
     
-    const Account = mongoose.model('Account', AccountSchema);
     
     AccountSchema.pre('save', function(next) {
         this.accountNumber = Math.floor(Math.random() * 9000000000) + 1000000000;
     })
 
-
-
+    //TODO  NEEDS TO BE TESTED
+    AccountSchema.virtual('lastFour').get(function() {
+        const split = this.accountNumber.split()
+        const lastFour = [];
+            for (var i=7; i<split.length; i++){
+                lastFour.push(split[i]);
+            }
+        return lastFour.join("");
+    })
+    
+    const Account = mongoose.model('Account', AccountSchema);
     
     const Checking = Account.discriminator('checking',
         new mongoose.Schema({
         })
     )
-    
 
     const Savings = Account.discriminator('savings',
         new mongoose.Schema({
@@ -38,7 +45,6 @@ const AccountSchema = new mongoose.Schema({
             minimum_balance: {type: Number},
         })
     )
-
 
     const Loan = Account.discriminator('loan',
         new mongoose.Schema({
@@ -56,9 +62,5 @@ const AccountSchema = new mongoose.Schema({
             minimum_payment: {type: Number}
         })
     )
-    
-    
-
-
 
 module.exports = Account, Checking, Savings, Loan, Credit

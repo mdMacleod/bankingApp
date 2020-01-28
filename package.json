@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "csv-express": "^1.2.2",
     "express": "^4.17.1",
     "express-flash": "0.0.2",
     "express-session": "^1.17.0",
@@ -18,5 +19,6 @@
     "mongoose-schema-extend": "^0.2.2",
     "mongoose-type-email": "^1.0.12",
     "path": "^0.12.7"
-  }
+  },
+  "devDependencies": {}
 }

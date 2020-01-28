@@ -1,1 +1,81 @@
-<p>dashboard works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Banking App</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">BBC BANK</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                <a class="nav-link" href="#">PERSONAL<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">BUSINESS</a>
+                </li>
+                <li class="nav-item dropdown">
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <a href="/"><img src="assets/images/search.png" alt="search"></a>
+            </form>
+            <span class="navbar-text">
+                <a [routerLink]="['/']">Chat with us</a>
+            </span>
+        </div>
+    </nav>
+    <div class="subnav">
+        <ul class="list-inline">
+            <li class="list-inline-item">CHECKING & SAVINGS</li>
+            <li class="list-inline-item">CREDIT CARDS</li>
+            <li class="list-inline-item">LOANS</li>
+        </ul>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div id="sidebar" class="col-md-2">
+                <h4>Links</h4>
+                <p>Open an Account</p>
+                <p>Online Statements</p>
+            </div>
+            <div id="main" class="col-md-8">
+                <router-outlet></router-outlet>
+            </div>
+            <div class="col-md-2">
+                <h4>Transfer Money</h4>
+                <form (submit)="transferMoney()" class="form1">
+                    <div class="form-group">
+                        <select class="form-control" id="trans_from">
+                        <option  disabled selected>From Account</option>
+                        <option>Checking -8349</option>
+                        <option>Savings -2537</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" id="trans_to">
+                        <option  disabled selected>To Account</option>
+                        <option>Checking -8349</option>
+                        <option>Savings -2537</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Amount</label>
+                        <input type="number" [(ngModel)]="amount" name="amount" class="form-control">
+                    </div>
+                    <button type="submit" [routerLink]="['/dashboard']" class="btn btn-light" value="Create Task" id="login_btn">Transfer</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

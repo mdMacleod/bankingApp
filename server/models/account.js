@@ -12,7 +12,7 @@ const AccountSchema = new mongoose.Schema({
     accountNumber: {type: Number,
         immutable: true},
         
-        balance: { type: Number, default: [0] },
+        balance: { type: Number, default: 0 },
         transactions: [transactions.schema],
         
     }, options, { timestamps: true }, { collection: 'accounts', discriminatorKey : '_type'})

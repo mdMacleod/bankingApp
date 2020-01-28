@@ -1,0 +1,26 @@
+th a{
+    color: white;
+    letter-spacing: .5pt;
+}
+.table.table-striped{
+    margin-top: 20px;
+    border: 1px #888888 solid;
+    box-shadow: 1px 1px 1px #888888;
+}
+th{
+    letter-spacing: .5pt;
+}
+h1{
+    color: #333333;
+    font-size: 30pt;
+    font-weight: normal;
+}
+thead{
+    background-image: linear-gradient(#0072bc,#3599da);
+}
+th{
+    color: white;
+}
+a{
+    color: #333333
+}

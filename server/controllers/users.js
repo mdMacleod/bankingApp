@@ -6,7 +6,7 @@ module.exports = {
     index: function (req, res) {
         console.log("***USERS_CONTROLLER_FIND_ALL***")
         User.find()
-            .then(data => res.json({ pets: data }))
+            .then(data => res.json({ users: data }))
             .catch(err => {
                 console.log("We have an error!", err);
                 for (var key in err.errors) {

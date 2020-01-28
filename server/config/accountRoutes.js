@@ -15,10 +15,28 @@ module.exports = function(app){
         accounts.show(req, res);
     })
 
-    app.post('/app/accounts/create/:id', function(req, res) {
+    app.post('/app/accounts/checking/create/:id', function(req, res) {
         //NOTE ID PARAM HERE IS USER ID
-        console.log('***CREATE_ACCOUNT_ROUTE***');
-        accounts.create(req, res);
+        console.log('***CREATE_CHK_ACCOUNT_ROUTE***');
+        accounts.createChecking(req, res);
+    })
+
+    app.post('/app/accounts/savings/create/:id', function(req, res) {
+        //NOTE ID PARAM HERE IS USER ID
+        console.log('***CREATE_SVG_ACCOUNT_ROUTE***');
+        accounts.createSavings(req, res);
+    })
+
+    app.post('/app/accounts/loan/create/:id', function(req, res) {
+        //NOTE ID PARAM HERE IS USER ID
+        console.log('***CREATE_LN_ACCOUNT_ROUTE***');
+        accounts.createLoan(req, res);
+    })
+
+    app.post('/app/accounts/credit/create/:id', function(req, res) {
+        //NOTE ID PARAM HERE IS USER ID
+        console.log('***CREATE_CC_ACCOUNT_ROUTE***');
+        accounts.createCredit(req, res);
     })
 
     app.put('/app/accounts/update', function(req, res) {

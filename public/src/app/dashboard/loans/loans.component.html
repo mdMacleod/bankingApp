@@ -1,1 +1,25 @@
-<p>loans works!</p>
+<div id="loan" class="account">
+    <h1>Loans</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Loans</th>
+                <th scope="col">  </th>
+                <th scope="col">$25,000.00</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Account Name</td>
+            <td>Original Amount</td>
+            <td>Remaining Balance</td>
+        </tr>
+        <tr>
+            <td><a [routerLink]="['/dashboard/loan', loan._id]">Loan -1289</a></td>
+            <td>$25,000.00</td>
+            <td>$5,876.21</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<a [routerLink]="['/dashboard/home']">Back to All Accounts</a>

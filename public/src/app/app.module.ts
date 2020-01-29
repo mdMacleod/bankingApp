@@ -18,6 +18,7 @@ import { OneLoanComponent } from './dashboard/loans/one-loan/one-loan.component'
 import { OneSavingsComponent } from './dashboard/savings/one-savings/one-savings.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { HomeComponent } from './dashboard/home/home.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { HomeComponent } from './dashboard/home/home.component';
     OneLoanComponent,
     OneSavingsComponent,
     FileUploadComponent,
-    HomeComponent
+    HomeComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,

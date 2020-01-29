@@ -10,4 +10,9 @@ export class HttpService {
   constructor(
     private _http: HttpClient
   ) { }
+
+  createUser(newUser){
+    console.log("**http service_Create User**", newUser)
+    return this._http.post('/app/users/create', newUser);
+  }
 }

@@ -1,0 +1,75 @@
+.navbar.navbar-expand-lg.navbar-light.bg-light{
+    background-color:#0072bc!important;
+    padding: 8px 50px;
+}
+a.nav-link{
+    color: white!important;
+    /* font-weight: bold; */
+    letter-spacing: 1pt;
+    margin-right: 10px;
+}
+a.navbar-brand{
+    color: white!important;
+}
+.navbar.navbar-expand-lg.navbar-light.bg-light img{
+    width: 25px;
+    margin: 5px;
+}
+.navbar.navbar-expand-lg.navbar-light.bg-light span a{
+    color: white!important;
+    /* font-weight: bold; */
+    letter-spacing: 1pt;
+    margin-left: 10px;
+}
+.subnav{
+    width: auto;
+    height: 50px;
+    border-bottom: 2px #c9c8c8 solid;
+    padding: 15px;
+    font-size: 10pt;
+    letter-spacing: 1pt;
+    color: #333333
+}
+.col-md-8 span{
+    color: white;
+    letter-spacing: 0.5pt;
+    font-size: 10pt;
+}
+.subnav li{
+    padding-left: 40px;
+}
+.container-fluid{
+    padding: 40px 120px;
+    background-color: #e6f2fd;
+    background-size: cover;
+    min-height: 1000px;
+}
+
+.login{
+    background-color:#0072bc;
+    color: white;
+    border-radius: 10px;
+    padding: 30px;
+}
+.login span a{
+    font-size: 10pt;
+    color: white;
+}
+.login h2{
+    color: white;
+    letter-spacing: 1pt;
+    margin-bottom: 20px;
+}
+#login_btn{
+    margin: 10px 0px;
+    background-color:#fdb244;
+    letter-spacing: 1pt;
+    font-weight: bold;
+    border: none;
+    color: #333333
+}
+h1{
+    font-size: 36pt;
+    color: white;
+    font-weight: bold;
+}

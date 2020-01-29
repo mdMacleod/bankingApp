@@ -34,7 +34,7 @@ module.exports = {
         User.find({name: req.body.email})
         .then( user => {
             if (user.length > 0) {
-                return Promise.reject ({unique: "That email already exists!"})
+                return Promise.reject ({unique: "That email already exists."})
             }
             return User.create(req.body)
         })

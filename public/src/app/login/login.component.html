@@ -29,7 +29,7 @@
                 <a href="/"><img src="assets/images/search.png" alt="search"></a>
             </form>
             <span class="navbar-text">
-                <a href="/">REGISTER</a>
+                <a [routerLink]="['/registration']">REGISTER</a>
             </span>
         </div>
     </nav>
@@ -51,23 +51,16 @@
                     <h2>LOG IN</h2>
                     <form (submit)="onSubmit()" class="form1">
                         <div class="form-group">
-                            <label for="newUser.acct_type">Account Type</label>
-                            <select class="form-control" id="newUser.acct_type">
-                            <option>Online Banking</option>
-                            <option>Online Investing</option>
-                            </select>
+                            <label for="user.email">Email</label>
+                            <input type="text" [(ngModel)]="user.email" name="user.email" id="user.email" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for="newUser">Email</label>
-                            <input type="text" [(ngModel)]="newUser" name="newUser" id="newUser" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="newUser">Password</label>
-                            <input type="password" [(ngModel)]="newUser" name="newUser" id="newUser" class="form-control">
+                            <label for="user.password">Password</label>
+                            <input type="password" [(ngModel)]="user.password" name="user.password" id="user.password" class="form-control">
                         </div>
                         <button type="submit" [routerLink]="['/dashboard/home']" class="btn btn-light" value="Create Task" id="login_btn">LOGIN</button>
                     </form>
-                    <span><p>Need an account? Register Here</p></span>
+                    <span><p><a [routerLink]="['/registration']">Need an account? Register here</a></p></span>
                 </div>
             </div>
         </div>

@@ -11,10 +11,13 @@ import { OneLoanComponent } from './dashboard/loans/one-loan/one-loan.component'
 import { CreditComponent } from './dashboard/credit/credit.component';
 import { OneCreditComponent } from './dashboard/credit/one-credit/one-credit.component';
 import { HomeComponent } from './dashboard/home/home.component';
+import { RegistrationComponent } from './registration/registration.component';
+
 
 const routes: Routes = [
 
   { path: 'login', component: LoginComponent },
+  { path: 'registration', component: RegistrationComponent },
 
   { path: 'dashboard', component: DashboardComponent, children: [
     {path: 'home', component: HomeComponent},

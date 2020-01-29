@@ -2,7 +2,7 @@ console.log('***SERVER***');
 const path =  require("path");
 const express = require("express");
 const app = express();
-
+const bestinstrucotor = 'chris'
 app.use(express.static( __dirname + '/public/dist/public' ));
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/client/views');

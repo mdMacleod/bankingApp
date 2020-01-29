@@ -51,8 +51,9 @@ a.navbar-brand{
     border-radius: 10px;
     padding: 30px;
 }
-.login span{
+.login span a{
     font-size: 10pt;
+    color: white;
 }
 .login h2{
     color: white;

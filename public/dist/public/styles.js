@@ -338,7 +338,7 @@ if (content.locals) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/breanneduren/Desktop/CD Work/MEAN/bankingApp/public/src/styles.css */"./src/styles.css");
+module.exports = __webpack_require__(/*! /Users/breanneduren/Desktop/CD Work/MEAN/bank_git/public/src/styles.css */"./src/styles.css");
 
 
 /***/ })
